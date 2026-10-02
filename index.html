@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sharadotsav - Official Registration Portal</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f59e0b;
+            --primary-dark: #b45309;
+            --accent: #e11d48;
+            --bg-gradient: linear-gradient(135deg, #fffbeb 0%, #fef2f2 50%, #fff7ed 100%);
+            --card-bg: #ffffff;
+            --border-color: #fde68a;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --input-bg: #f8fafc;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 20px 40px rgba(180, 83, 9, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 10px;
+        }
+
+        .main-wrapper {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        /* Festive Portal Header */
+        .portal-header {
+            text-align: center;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #78350f, #92400e, #b45309);
+            color: white;
+            padding: 24px 12px;
+            border-radius: 18px;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid #fcd34d;
+            position: relative;
+            overflow: hidden;
+            animation: headerGlow 3s infinite alternate;
+        }
+
+        @keyframes headerGlow {
+            from { box-shadow: 0 20px 40px rgba(180, 83, 9, 0.12); }
+            to { box-shadow: 0 20px 50px rgba(245, 158, 11, 0.3); }
+        }
+
+        .portal-header h1 {
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #fff 0%, #fde68a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .portal-header .tagline {
+            font-size: 13px;
+            font-weight: 700;
+            color: #fef08a;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 6px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .portal-header p {
+            font-size: 11.5px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        /* Tab Navigation Bar */
+        .tab-nav {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 16px;
+            background: #ffffff;
+            padding: 6px;
+            border-radius: 14px;
+            box-shadow: var(--shadow-sm);
+            border: 1.5px solid var(--border-color);
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 10px 6px;
+            border: none;
+            background: transparent;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary-dark);
+            background: rgba(245, 158, 11, 0.06);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #d97706, #b45309);
+            color: white;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.35);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Container Card */
+        .container {
+            width: 100%;
+            background: var(--card-bg);
+            padding: 20px 16px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #d97706, #e11d48, #f59e0b);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .organizer-tag {
+            display: inline-block;
+            background: rgba(217, 119, 6, 0.08);
+            color: #b45309;
+            padding: 5px 14px;
+            border-radius: 18px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(217, 119, 6, 0.2);
+        }
+
+        h2 {
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            color: var(--text-main);
+            font-weight: 800;
+        }
+
+        /* Event Showcase UI */
+        .event-showcase {
+            background: linear-gradient(135deg, #f8fafc 0%, #fffbeb 100%);
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 14px;
+            margin-bottom: 18px;
+        }
+
+        .showcase-header {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 2px solid rgba(217, 119, 6, 0.15);
+            padding-bottom: 5px;
+        }
+
+        .event-details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .event-card-item {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 10px 12px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .event-card-item.full-width {
+            grid-column: span 2;
+        }
+
+        .card-lbl {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .card-val {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.35;
+        }
+
+        /* Prizes & Helpline Grid */
+        .prize-showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .prize-box {
+            background: #ffffff;
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 6px;
+            text-align: center;
+        }
+
+        .prize-box.p-1 { border-color: #f59e0b; background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%); }
+        .prize-box.p-2 { border-color: #cbd5e1; background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); }
+        .prize-box.p-3 { border-color: #d97706; background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%); }
+
+        .p-rank { font-size: 10px; font-weight: 800; text-transform: uppercase; margin-bottom: 2px; }
+        .p-amt { font-size: 13px; font-weight: 800; color: var(--text-main); margin-bottom: 1px; }
+        .p-reward { font-size: 9px; color: var(--text-muted); font-weight: 600; }
+
+        .helpline-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .helpline-card {
+            background: #ffffff;
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            padding: 6px 4px;
+            text-align: center;
+        }
+
+        .helpline-name { font-size: 10px; font-weight: 700; color: var(--text-main); margin-bottom: 2px; }
+        .helpline-number { font-size: 9.5px; font-weight: 600; color: var(--primary-dark); text-decoration: none; display: block; background: rgba(217, 119, 6, 0.06); padding: 4px; border-radius: 5px; }
+
+        /* Form Layout */
+        fieldset {
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 14px 12px;
+            margin-bottom: 14px;
+            background: #ffffff;
+        }
+
+        legend {
+            color: var(--primary-dark);
+            font-weight: 800;
+            padding: 0 6px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        input[type="text"], input[type="number"], input[type="email"], input[type="tel"], textarea, select {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1.5px solid var(--border-color);
+            background: var(--input-bg);
+            color: var(--text-main);
+            border-radius: 10px;
+            font-size: 14px;
+            -webkit-appearance: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+        }
+
+        textarea { resize: vertical; min-height: 70px; }
+
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .row .form-group { flex: 1; }
+
+        /* Offline & Online Payment Layout */
+        .fee-options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .fee-options-grid.single-col {
+            grid-template-columns: 1fr;
+        }
+
+        .fee-card {
+            background: #ffffff;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .fee-card.highlight {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(255, 251, 235, 0.6) 0%, #ffffff 100%);
+        }
+
+        .fee-badge {
+            display: inline-block;
+            background: rgba(5, 150, 105, 0.1);
+            color: #059669;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 15px;
+            margin-bottom: 4px;
+        }
+
+        .fee-title { font-size: 12px; font-weight: 700; color: var(--text-main); margin-bottom: 2px; text-transform: uppercase; }
+        .fee-price { font-size: 18px; font-weight: 800; color: var(--primary-dark); margin-bottom: 2px; }
+        .fee-desc { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+        .venue-payment-box {
+            background: linear-gradient(135deg, #f8fafc 0%, #fffbeb 100%);
+            border: 1.5px dashed var(--primary);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .venue-icon {
+            font-size: 20px;
+            background: rgba(217, 119, 6, 0.1);
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .venue-text-wrap {
+            text-align: left;
+        }
+
+        .venue-text-wrap h4 {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .venue-text-wrap p {
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        /* WhatsApp Online Payment Box */
+        .whatsapp-payment-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            border: 1.5px solid #10b981;
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .whatsapp-content-wrap h4 {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: #047857;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .whatsapp-content-wrap p {
+            font-size: 11.5px;
+            color: #065f46;
+            line-height: 1.5;
+            margin-bottom: 2px;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: #25d366;
+            color: #ffffff;
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
+            transition: background 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #22bf5b;
+        }
+
+        /* Rules & Terms Layout */
+        .rules-container {
+            background: #f8fafc;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+
+        .rules-title {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .rules-box {
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            border: 1px solid var(--border-color);
+            max-height: 110px;
+            overflow-y: auto;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 11.5px;
+            cursor: pointer;
+            color: var(--text-main);
+            user-select: none;
+            line-height: 1.35;
+            font-weight: 500;
+        }
+
+        .checkbox-group input {
+            margin-top: 2px;
+            accent-color: var(--primary);
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 13px;
+            background: linear-gradient(135deg, #d97706, #b45309);
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-size: 13.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            margin-top: 4px;
+            will-change: transform;
+            transition: transform 0.1s ease, background 0.2s ease;
+        }
+
+        button[type="submit"]:active { transform: scale(0.97); }
+
+        /* Developer Footer Signature with LinkedIn Link */
+        .dev-footer {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding: 12px;
+            background: #ffffff;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 20px rgba(180, 83, 9, 0.12);
+        }
+
+        .dev-footer p {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+        }
+
+        .dev-footer a {
+            background: linear-gradient(135deg, #d97706, #e11d48);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-block;
+            transition: opacity 0.2s;
+        }
+
+        .dev-footer a:hover {
+            opacity: 0.85;
+            text-decoration: underline;
+        }
+
+        /* Modal Popup */
+        #successModal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            justify-content: center; align-items: center;
+            z-index: 9999;
+            padding: 15px;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background: #ffffff;
+            padding: 22px 18px;
+            border-radius: 18px;
+            max-width: 350px; width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            border-top: 6px solid #059669;
+        }
+
+        .reg-num-badge {
+            background: rgba(217, 119, 6, 0.08);
+            color: var(--primary-dark);
+            font-size: 18px; font-weight: 800;
+            padding: 8px 10px; border-radius: 10px;
+            margin: 10px 0; letter-spacing: 1.2px;
+            border: 2px dashed var(--primary);
+        }
+
+        /* Fully Responsive Breakpoints for Mobile */
+        @media (max-width: 480px) {
+            body { padding: 8px 6px; }
+            .container { padding: 16px 12px; border-radius: 16px; }
+            .event-details-grid { grid-template-columns: 1fr; }
+            .event-card-item.full-width { grid-column: span 1; }
+            .prize-showcase-grid, .fee-options-grid { grid-template-columns: 1fr; }
+            .helpline-grid { grid-template-columns: repeat(2, 1fr); }
+            .row { flex-direction: column; gap: 10px; }
+            .portal-header h1 { font-size: 22px; }
+            .portal-header .tagline { font-size: 11px; }
+            .tab-btn { font-size: 10.5px; padding: 8px 4px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    <!-- Festive Portal Banner -->
+    <div class="portal-header">
+        <h1>🌺 Sharadotsav 🌺</h1>
+        <div class="tagline">Khel, Sanskriti aur Utsav ka Mahasangam</div>
+        <p>Shree Durga Mandir Vikas Samiti, Mirzapur — Official Registration Portal</p>
+    </div>
+
+    <!-- Tab Switcher Navigation -->
+    <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab('freefire', event)">🔥 Free Fire</button>
+        <button class="tab-btn" onclick="switchTab('ludo', event)">🎲 Ludo Championship</button>
+        <button class="tab-btn" onclick="switchTab('dance', event)">💃 Dance & Cultural</button>
+    </div>
+
+    <!-- TAB 1: Free Fire Tournament -->
+    <div id="tab-freefire" class="tab-content active">
+        <div class="container">
+            <div class="header">
+                <div class="organizer-tag">🏛 Organized by: Shree Durga Mandir Vikas Samiti, Mirzapur</div>
+                <h2>Free Fire LAN Tournament</h2>
+            </div>
+
+            <div class="event-showcase">
+                <div class="showcase-header"><span>⚡ Tournament Overview</span></div>
+                <div class="event-details-grid">
+                    <div class="event-card-item">
+                        <span class="card-lbl">📅 Date & Time</span>
+                        <span class="card-val">18 October 2026, From 11:00 AM</span>
+                    </div>
+                    <div class="event-card-item">
+                        <span class="card-lbl">⏳ Last Date</span>
+                        <span class="card-val">14 October 2026 (11:59 PM)</span>
+                    </div>
+                    <div class="event-card-item full-width">
+                        <span class="card-lbl">📍 Venue</span>
+                        <span class="card-val">Chhoti Durga Sthan, Mirzapur, Ward No-02, Rosera, Samastipur, Bihar - 848210</span>
+                    </div>
+                    <div class="event-card-item full-width">
+                        <span class="card-lbl" style="margin-bottom: 6px;">📞 Helpline & Support Contacts</span>
+                        <div class="helpline-grid">
+                            <div class="helpline-card">
+                                <div class="helpline-name" style="color: var(--primary-dark); font-weight: 800;">Mukesh Kumar</div>
+                                <div style="font-size: 8.5px; color: #059669; font-weight: 700; margin-bottom: 1px;">Organizer</div>
+                                <a href="tel:+917070760162" class="helpline-number">+91 7070760162</a>
+                            </div>
+                            <div class="helpline-card">
+                                <div class="helpline-name" style="color: var(--primary-dark); font-weight: 800;">Prashant Kumar</div>
+                                <div style="font-size: 8.5px; color: #2563eb; font-weight: 700; margin-bottom: 1px;">Coordinator</div>
+                                <a href="tel:+917763932208" class="helpline-number">+91 7763932208</a>
+                            </div>
+                            <div class="helpline-card">
+                                <div class="helpline-name" style="color: var(--primary-dark); font-weight: 800;">Kishan Kumar</div>
+                                <div style="font-size: 8.5px; color: #d97706; font-weight: 700; margin-bottom: 1px;">Venue Sup.</div>
+                                <a href="tel:+919318365313" class="helpline-number">+91 9318365313</a>
+                            </div>
+                            <div class="helpline-card">
+                                <div class="helpline-name" style="color: var(--primary-dark); font-weight: 800;">Durga Kumar</div>
+                                <div style="font-size: 8.5px; color: #059669; font-weight: 700; margin-bottom: 1px;">Support</div>
+                                <a href="tel:+919523404306" class="helpline-number">+91 9523404306</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-card-item full-width">
+                        <span class="card-lbl" style="margin-bottom: 6px;">🏆 Prize Pool</span>
+                        <div class="prize-showcase-grid">
+                            <div class="prize-box p-1">
+                                <div class="p-rank">🥇 1st</div>
+                                <div class="p-amt">₹2,600</div>
+                                <div class="p-reward">+ Medal</div>
+                            </div>
+                            <div class="prize-box p-2">
+                                <div class="p-rank">🥈 2nd</div>
+                                <div class="p-amt">₹1,500</div>
+                                <div class="p-reward">+ Medal</div>
+                            </div>
+                            <div class="prize-box p-3">
+                                <div class="p-rank">🥉 3rd</div>
+                                <div class="p-amt">₹800</div>
+                                <div class="p-reward">+ Medal</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Free Fire Form -->
+            <form id="ffForm" onsubmit="handleFFSubmit(event)">
+                <fieldset>
+                    <legend>1. Team & Leader Details</legend>
+                    <div class="form-group">
+                        <label for="ff_team_name">Team Name *</label>
+                        <input type="text" id="ff_team_name" name="team_name" required placeholder="Squad/Guild Name">
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="ff_mobile">Mobile (WhatsApp) *</label>
+                            <input type="tel" id="ff_mobile" name="mobile_number" required placeholder="10-digit mobile number" pattern="[0-9]{10}" maxlength="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="ff_email">Email *</label>
+                            <input type="email" id="ff_email" name="email" required placeholder="email@gmail.com">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 12px;">
+                        <label for="ff_address">Full Address *</label>
+                        <textarea id="ff_address" name="address" required placeholder="Village/Ward, Post, PS, District, Pin"></textarea>
+                    </div>
+                    <div class="row" style="margin-top: 12px;">
+                        <div class="form-group">
+                            <label for="leader_ign">Leader IGN *</label>
+                            <input type="text" id="leader_ign" name="leader_ign" required placeholder="Leader In-Game Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="leader_uid">Leader UID *</label>
+                            <input type="number" id="leader_uid" name="leader_uid" required placeholder="Numeric UID">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2. Squad Roster (Player 2, 3, 4)</legend>
+                    <div class="form-group">
+                        <label>Player 2 Details *</label>
+                        <div class="row">
+                            <input type="text" name="p2_ign" required placeholder="Player 2 IGN">
+                            <input type="number" name="p2_uid" required placeholder="Player 2 UID">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 10px;">
+                        <label>Player 3 Details *</label>
+                        <div class="row">
+                            <input type="text" name="p3_ign" required placeholder="Player 3 IGN">
+                            <input type="number" name="p3_uid" required placeholder="Player 3 UID">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 10px;">
+                        <label>Player 4 Details *</label>
+                        <div class="row">
+                            <input type="text" name="p4_ign" required placeholder="Player 4 IGN">
+                            <input type="number" name="p4_uid" required placeholder="Player 4 UID">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>3. Registration Fee & Payment</legend>
+                    <div class="fee-options-grid single-col">
+                        <div class="fee-card highlight">
+                            <span class="fee-badge">Registration Fee</span>
+                            <div class="fee-title">Squad Registration Fee</div>
+                            <div class="fee-price">₹399</div>
+                            <div class="fee-desc">For Full 4-Player Squad</div>
+                        </div>
+                    </div>
+                    <div class="venue-payment-box">
+                        <div class="venue-icon">📍</div>
+                        <div class="venue-text-wrap">
+                            <h4>Offline Payment (Venue Desk)</h4>
+                            <p>Fee of ₹399 can be paid in cash directly at Chhoti Durga Sthan venue reporting counter.</p>
+                        </div>
+                    </div>
+                    <div class="whatsapp-payment-box">
+                        <div class="whatsapp-content-wrap">
+                            <h4>Online Payment (QR / UPI)</h4>
+                            <p>ऑनलाइन भुगतान के लिए व्हाट्सएप पर संदेश भेजें। फॉर्म जमा करने के बाद अपना पंजीकरण संख्या और भुगतान का स्क्रीनशॉट दोनों इसी व्हाट्सएप पर भेजें।</p>
+                        </div>
+                        <a href="https://wa.me/917070760162?text=Hello%20Sir,%20Main%20Free%20Fire%20Tournament%20ke%20liye%20Online%20Payment%20(QR)%20karna%20chahta%20hoon.%20Yeh%20mera%20Registration%20Number%20aur%20Payment%20Screenshot%20hai:" target="_blank" class="whatsapp-btn">
+                            💬 Message on WhatsApp for QR
+                        </a>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>4. Rules & Terms</legend>
+                    <div class="rules-container">
+                        <div class="rules-title">📜 Free Fire Tournament Guidelines</div>
+                        <div class="rules-box">
+                            • Strictly Offline Venue Event hosted at Chhoti Durga Sthan, Mirzapur.<br>
+                            • Emulators, triggers, and external hardware are strictly banned. Mobile & Tablets only.<br>
+                            • All squad members must report 30 minutes prior to their assigned slot with valid IDs.<br>
+                            • Any kind of teaming, hacking, or misconduct will lead to immediate disqualification without refund.
+                        </div>
+                    </div>
+                    <label class="checkbox-group">
+                        <input type="checkbox" required>
+                        <span>Our squad agrees to follow all tournament rules, timings, and organizing committee decisions.</span>
+                    </label>
+                </fieldset>
+
+                <button type="submit" id="ffSubmitBtn">Submit Free Fire Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TAB 2: Ludo Tournament -->
+    <div id="tab-ludo" class="tab-content">
+        <div class="container">
+            <div class="header">
+                <div class="organizer-tag">🏛 Organized by: Shree Durga Mandir Vikas Samiti, Mirzapur</div>
+                <h2>Ludo Championship</h2>
+            </div>
+
+            <div class="event-showcase">
+                <div class="showcase-header"><span>⚡ Tournament Overview</span></div>
+                <div class="event-details-grid">
+                    <div class="event-card-item">
+                        <span class="card-lbl">📅 Date & Time</span>
+                        <span class="card-val">18 October 2026, From 02:00 PM</span>
+                    </div>
+                    <div class="event-card-item">
+                        <span class="card-lbl">⏳ Last Date</span>
+                        <span class="card-val">14 October 2026 (11:59 PM)</span>
+                    </div>
+                    <div class="event-card-item full-width">
+                        <span class="card-lbl">📍 Venue</span>
+                        <span class="card-val">Chhoti Durga Sthan, Mirzapur, Ward No-02, Rosera, Samastipur, Bihar - 848210</span>
+                    </div>
+                    <div class="event-card-item full-width">
+                        <span class="card-lbl" style="margin-bottom: 6px;">📞 Helpline & Support Contacts</span>
+                        <div class="helpline-grid">
+                            <div class="helpline-card">
+                                <div class="helpline-name" style="color: var(--primary-dark); font-weight: 800;">Mukesh Kumar</div>
+                                <div style="font-size: 8.5px; color: #059669; font-weight: 700; margin-bottom: 1px;">Organizer</div>
+                                <a href="tel:+917070760162" class="helpline-number">+91 7070760162</a>
+                            </div>
+                            <div class="helpline-card">
+                                <div class="helpline-name" style="color: var(--primary-dark); font-weight: 800;">Prashant Kumar</div>
+                                <div style="font-size: 8.5px; color: #2563eb; font-weight: 700; margin-bottom: 1px;">Coordinator</div>
+                                <a href="tel:+917763932208" class="helpline-number">+91 7763932208</a>
+                            </div>
+                            <div class="helpline-card">
+                                <div class="helpline-name" style="color: var(--primary-dark); font-weight: 800;">Kishan Kumar</div>
+                                <div style="font-size: 8.5px; color: #d97706; font-weight: 700; margin-bottom: 1px;">Venue Sup.</div>
+                                <a href="tel:+919318365313" class="helpline-number">+91 9318365313</a>
+                            </div>
+                            <div class="helpline-card">
+                                <div class="helpline-name" style="color: var(--primary-dark); font-weight: 800;">Durga Kumar</div>
+                                <div style="font-size: 8.5px; color: #059669; font-weight: 700; margin-bottom: 1px;">Support</div>
+                                <a href="tel:+919523404306" class="helpline-number">+91 9523404306</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-card-item full-width">
+                        <span class="card-lbl" style="margin-bottom: 6px;">🏆 Prize Pool</span>
+                        <div class="prize-showcase-grid">
+                            <div class="prize-box p-1">
+                                <div class="p-rank">🥇 1st</div>
+                                <div class="p-amt">₹1,100</div>
+                                <div class="p-reward">+ Medal</div>
+                            </div>
+                            <div class="prize-box p-2">
+                                <div class="p-rank">🥈 2nd</div>
+                                <div class="p-amt">₹600</div>
+                                <div class="p-reward">+ Medal</div>
+                            </div>
+                            <div class="prize-box p-3">
+                                <div class="p-rank">🥉 3rd</div>
+                                <div class="p-amt">₹300</div>
+                                <div class="p-reward">+ Medal</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ludo Form -->
+            <form id="ludoForm" onsubmit="handleLudoSubmit(event)">
+                <fieldset>
+                    <legend>1. Player Details</legend>
+                    <div class="form-group">
+                        <label for="ludo_player_name">Participant Name *</label>
+                        <input type="text" id="ludo_player_name" name="player_name" required placeholder="Your Full Name">
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="ludo_mobile">Mobile (WhatsApp) *</label>
+                            <input type="tel" id="ludo_mobile" name="mobile_number" required placeholder="10-digit mobile number" pattern="[0-9]{10}" maxlength="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="ludo_email">Email *</label>
+                            <input type="email" id="ludo_email" name="email" required placeholder="email@gmail.com">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 12px;">
+                        <label for="ludo_address">Full Address *</label>
+                        <textarea id="ludo_address" name="address" required placeholder="Village/Ward, Post, PS, District, Pin"></textarea>
+                    </div>
+                    <div class="row" style="margin-top: 12px;">
+                        <div class="form-group">
+                            <label for="ludo_ign">Game Username / ID *</label>
+                            <input type="text" id="ludo_ign" name="ludo_username" required placeholder="Ludo King Username/ID">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2. Registration Fee & Payment</legend>
+                    <div class="fee-options-grid single-col">
+                        <div class="fee-card highlight">
+                            <span class="fee-badge">Registration Fee</span>
+                            <div class="fee-title">Ludo Entry Fee</div>
+                            <div class="fee-price">₹51</div>
+                            <div class="fee-desc">Per Individual Participant</div>
+                        </div>
+                    </div>
+                    <div class="venue-payment-box">
+                        <div class="venue-icon">📍</div>
+                        <div class="venue-text-wrap">
+                            <h4>Offline Payment (Venue Desk)</h4>
+                            <p>Fee of ₹51 can be paid in cash directly at Chhoti Durga Sthan venue reporting counter.</p>
+                        </div>
+                    </div>
+                    <div class="whatsapp-payment-box">
+                        <div class="whatsapp-content-wrap">
+                            <h4>Online Payment (QR / UPI)</h4>
+                            <p>ऑनलाइन भुगतान के लिए व्हाट्सएप पर संदेश भेजें। फॉर्म जमा करने के बाद अपना पंजीकरण संख्या और भुगतान का स्क्रीनशॉट दोनों इसी व्हाट्सएप पर भेजें।</p>
+                        </div>
+                        <a href="https://wa.me/917070760162?text=Hello%20Sir,%20Main%20Ludo%20Tournament%20ke%20liye%20Online%20Payment%20(QR)%20karna%20chahta%20hoon.%20Yeh%20mera%20Registration%20Number%20aur%20Payment%20Screenshot%20hai:" target="_blank" class="whatsapp-btn">
+                            💬 Message on WhatsApp for QR
+                        </a>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>3. Rules & Terms</legend>
+                    <div class="rules-container">
+                        <div class="rules-title">📜 Ludo Tournament Guidelines</div>
+                        <div class="rules-box">
+                            • Strictly offline board/mobile tournament hosted at Chhoti Durga Sthan, Mirzapur.<br>
+                            • Fair play is mandatory. Any manipulation or external tool usage leads to instant disqualification.<br>
+                            • Players must report 20 minutes prior to their match slot.<br>
+                            • Committee's decision regarding matches and scoring will be final.
+                        </div>
+                    </div>
+                    <label class="checkbox-group">
+                        <input type="checkbox" required>
+                        <span>I agree to follow all tournament rules, timings, and organizing committee decisions.</span>
+                    </label>
+                </fieldset>
+
+                <button type="submit" id="ludoSubmitBtn">Submit Ludo Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TAB 3: Dance & Cultural Event -->
+    <div id="tab-dance" class="tab-content">
+        <div class="container">
+            <div class="header">
+                <div class="organizer-tag">🏛 Organized by: Shree Durga Mandir Vikas Samiti, Mirzapur</div>
+                <h2>Dance & Cultural Event</h2>
+            </div>
+
+            <div class="event-showcase">
+                <div class="showcase-header"><span>⚡ Event Overview</span></div>
+                <div class="event-details-grid">
+                    <div class="event-card-item">
+                        <span class="card-lbl">📅 Date & Time</span>
+                        <span class="card-val">19 October 2026, From 12:00 AM Onwards</span>
+                    </div>
+                    <div class="event-card-item">
+                        <span class="card-lbl">⏳ Last Date</span>
+                        <span class="card-val">16 October 2026 (11:59 PM)</span>
+                    </div>
+                    <div class="event-card-item full-width">
+                        <span class="card-lbl">📍 Venue</span>
+                        <span class="card-val">Chhoti Durga Sthan, Mirzapur, Ward No-02, Rosera, Samastipur, Bihar - 848210</span>
+                    </div>
+                    <div class="event-card-item full-width">
+                        <span class="card-lbl" style="margin-bottom: 6px;">📞 Helpline Contacts</span>
+                        <div class="helpline-grid" style="grid-template-columns: repeat(3, 1fr);">
+                            <div class="helpline-card" style="padding: 6px;">
+                                <div class="helpline-name" style="color: var(--primary-dark); font-weight: 800;">Nilkamal Raushan</div>
+                                <div style="font-size: 8.5px; color: #059669; font-weight: 700; margin-bottom: 1px;">Senior Comm.</div>
+                                <a href="tel:+916209103087" class="helpline-number">+91 6209103087</a>
+                            </div>
+                            <div class="helpline-card" style="padding: 6px;">
+                                <div class="helpline-name" style="color: var(--primary-dark); font-weight: 800;">Mukesh Kumar</div>
+                                <div style="font-size: 8.5px; color: #059669; font-weight: 700; margin-bottom: 1px;">Organizer</div>
+                                <a href="tel:+917070760162" class="helpline-number">+91 7070760162</a>
+                            </div>
+                            <div class="helpline-card" style="padding: 6px;">
+                                <div class="helpline-name" style="color: var(--primary-dark); font-weight: 800;">Deepak Kumar</div>
+                                <div style="font-size: 8.5px; color: #059669; font-weight: 700; margin-bottom: 1px;">Organizer</div>
+                                <a href="tel:+919135466313" class="helpline-number">+91 9135466313</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-card-item full-width">
+                        <span class="card-lbl">🏆 Prizes & Recognition</span>
+                        <span class="card-val">1st, 2nd & 3rd Winners in all categories. Certificates, Trophies & Medals for all participants!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dance Form -->
+            <form id="danceForm" onsubmit="handleDanceSubmit(event)">
+                <fieldset>
+                    <legend>1. Participant & Contact Details</legend>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="dance_team_name">Group / Participant Name *</label>
+                            <input type="text" id="dance_team_name" name="team_name" required placeholder="Group or Individual Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="father_name">Father's Name</label>
+                            <input type="text" id="father_name" name="father_name" placeholder="Father's name">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 12px;">
+                        <div class="form-group">
+                            <label for="dance_mobile">Mobile (WhatsApp) *</label>
+                            <input type="tel" id="dance_mobile" name="mobile_number" required placeholder="10-digit mobile number" pattern="[0-9]{10}" maxlength="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="dance_email">Email *</label>
+                            <input type="email" id="dance_email" name="email" required placeholder="email@gmail.com">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 12px;">
+                        <label for="dance_address">Full Address *</label>
+                        <textarea id="dance_address" name="address" required placeholder="Village/Ward, Post, PS, District, Pin"></textarea>
+                    </div>
+                    <div class="row" style="margin-top: 12px;">
+                        <div class="form-group">
+                            <label for="participation_type">Participation Type *</label>
+                            <select id="participation_type" name="participation_type" required onchange="toggleDanceTeam()">
+                                <option value="Solo">Solo (Individual)</option>
+                                <option value="Group">Group / Duet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dance_style">Dance Style *</label>
+                            <select id="dance_style" name="dance_style" required>
+                                <option value="Bollywood">Bollywood</option>
+                                <option value="Folk">Folk (Lok Nritya)</option>
+                                <option value="Classical">Classical</option>
+                                <option value="HipHop">Hip-Hop / Freestyle</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 12px;">
+                        <div class="form-group">
+                            <label for="age_category">Age Group *</label>
+                            <select id="age_category" name="age_category" required>
+                                <option value="5-9">5-9 Years</option>
+                                <option value="10-15">10-15 Years</option>
+                                <option value="16-20">16-20 Years</option>
+                                <option value="21+">21+ Above</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="song_name">Song Name / Theme *</label>
+                            <input type="text" id="song_name" name="song_name" required placeholder="Song name or theme">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset id="dance-team-fieldset" style="opacity: 0.4; pointer-events: none; transition: opacity 0.3s ease;">
+                    <legend>2. Co-Performers (For Groups)</legend>
+                    
+                    <div class="form-group">
+                        <label>Co-Performer 2 Details</label>
+                        <div class="row">
+                            <input type="text" name="cp2_name" class="d-team-inp" placeholder="Performer 2 Name" disabled>
+                            <input type="number" name="cp2_age" class="d-team-inp" placeholder="Performer 2 Age" min="3" max="99" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 10px;">
+                        <label>Co-Performer 3 Details</label>
+                        <div class="row">
+                            <input type="text" name="cp3_name" class="d-team-inp" placeholder="Performer 3 Name" disabled>
+                            <input type="number" name="cp3_age" class="d-team-inp" placeholder="Performer 3 Age" min="3" max="99" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 10px;">
+                        <label>Co-Performer 4 Details</label>
+                        <div class="row">
+                            <input type="text" name="cp4_name" class="d-team-inp" placeholder="Performer 4 Name" disabled>
+                            <input type="number" name="cp4_age" class="d-team-inp" placeholder="Performer 4 Age" min="3" max="99" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 10px;">
+                        <label>Co-Performer 5 Details</label>
+                        <div class="row">
+                            <input type="text" name="cp5_name" class="d-team-inp" placeholder="Performer 5 Name" disabled>
+                            <input type="number" name="cp5_age" class="d-team-inp" placeholder="Performer 5 Age" min="3" max="99" disabled>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>3. Registration Fee & Payment</legend>
+                    <div class="fee-options-grid">
+                        <div class="fee-card highlight">
+                            <span class="fee-badge">Solo Fee</span>
+                            <div class="fee-title">Solo Entry Fee</div>
+                            <div class="fee-price">₹21</div>
+                            <div class="fee-desc">Per Individual</div>
+                        </div>
+                        <div class="fee-card highlight">
+                            <span class="fee-badge">Group Fee</span>
+                            <div class="fee-title">Group Entry Fee</div>
+                            <div class="fee-price">₹51</div>
+                            <div class="fee-desc">Per Dance Team</div>
+                        </div>
+                    </div>
+                    <div class="venue-payment-box">
+                        <div class="venue-icon">📍</div>
+                        <div class="venue-text-wrap">
+                            <h4>Offline Payment (Venue Desk)</h4>
+                            <p>Entry fees (Solo: ₹21 / Group: ₹51) must be paid in cash directly at Chhoti Durga Sthan venue counter before performance.</p>
+                        </div>
+                    </div>
+                    <div class="whatsapp-payment-box">
+                        <div class="whatsapp-content-wrap">
+                            <h4>Online Payment (QR / UPI)</h4>
+                            <p>ऑनलाइन भुगतान के लिए व्हाट्सएप पर संदेश भेजें। फॉर्म जमा करने के बाद अपना पंजीकरण संख्या और भुगतान का स्क्रीनशॉट दोनों इसी व्हाट्सएप पर भेजें।</p>
+                        </div>
+                        <a href="https://wa.me/917070760162?text=Hello%20Sir,%20Main%20Dance%20%26%20Cultural%20Event%20ke%20liye%20Online%20Payment%20(QR)%20karna%20chahta%20hoon.%20Yeh%20mera%20Registration%20Number%20aur%20Payment%20Screenshot%20hai:" target="_blank" class="whatsapp-btn">
+                            💬 Message on WhatsApp for QR
+                        </a>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>4. Rules & Terms</legend>
+                    <div class="rules-container">
+                        <div class="rules-title">📜 Dance & Cultural Event Guidelines</div>
+                        <div class="rules-box">
+                            • Participants must bring their audio performance track in a clean Pen Drive (USB) in advance.<br>
+                            • Cultural decency, traditional attire appropriateness, and stage discipline must be maintained throughout.<br>
+                            • Reporting time at the venue is 30 minutes prior to program commencement.<br>
+                            • The decision of the honorable judges will be final and binding for all participants.
+                        </div>
+                    </div>
+                    <label class="checkbox-group">
+                        <input type="checkbox" required>
+                        <span>We agree to all cultural event guidelines, timing schedules, and committee rules.</span>
+                    </label>
+                </fieldset>
+
+                <button type="submit" id="danceSubmitBtn">Submit Dance & Cultural Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Developer Footer Signature with LinkedIn Link -->
+    <div class="dev-footer">
+        <p>Design & Developed by <a href="https://linkedin.com/in/mukeshkumar-in" target="_blank">MUKESH KUMAR</a></p>
+    </div>
+</div>
+
+<!-- Success Modal Popup with WhatsApp Group Link Added -->
+<div id="successModal">
+    <div class="modal-content">
+        <h3 style="color: #059669; margin-bottom: 6px;">🎉 SUCCESSFUL!</h3>
+        <p style="font-size: 12.5px; color: var(--text-muted);">Registration Number:</p>
+        <div class="reg-num-badge" id="modalRegNum">REG2026001</div>
+        <p style="font-size: 11.5px; color: #b45309; font-weight: 700; margin-bottom: 10px;">📸 Take a screenshot for venue reporting!</p>
+        
+        <!-- NEW ADDED FEATURE: WhatsApp Group Join Button inside Modal -->
+        <a id="whatsappGroupBtn" href="https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK_HERE" target="_blank" style="display: block; background: #25d366; color: white; padding: 10px; border-radius: 9px; font-weight: 700; text-decoration: none; margin-bottom: 8px; font-size: 12px;">
+            💬 Join Official WhatsApp Group
+        </a>
+
+        <button type="button" onclick="closeModal()" style="background: var(--primary-dark); color: white; border: none; padding: 10px; border-radius: 9px; font-weight: 700; width: 100%; cursor: pointer;">Done</button>
+    </div>
+</div>
+
+<script>
+    const FF_SHEET_API = 'https://sheetdb.io/api/v1/v21r6ac9z3agb';
+    const LUDO_SHEET_API = 'https://sheetdb.io/api/v1/g6dz5ek39tp5n'; // Updated Ludo API Link
+    const DANCE_SHEET_API = 'https://sheetdb.io/api/v1/1pom0ol8gqnph';
+
+    function switchTab(tabId, event) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleDanceTeam() {
+        const pType = document.getElementById('participation_type').value;
+        const fieldset = document.getElementById('dance-team-fieldset');
+        const inputs = document.querySelectorAll('.d-team-inp');
+        if(pType === 'Group') {
+            fieldset.style.opacity = '1';
+            fieldset.style.pointerEvents = 'auto';
+            inputs.forEach(i => i.disabled = false);
+        } else {
+            fieldset.style.opacity = '0.4';
+            fieldset.style.pointerEvents = 'none';
+            inputs.forEach(i => { i.disabled = true; i.value = ''; });
+        }
+    }
+
+    function getNextReg(prefix) {
+        let last = localStorage.getItem(prefix + '_last') || 0;
+        let next = parseInt(last) + 1;
+        localStorage.setItem(prefix + '_last', next);
+        return prefix + '2026' + String(next).padStart(3, '0');
+    }
+
+    function handleFFSubmit(e) {
+        e.preventDefault();
+        const btn = document.getElementById('ffSubmitBtn');
+        btn.disabled = true; btn.innerText = "Submitting...";
+        const regNum = getNextReg('FF');
+        const form = document.getElementById('ffForm');
+        const fd = new FormData(form);
+
+        const payload = {
+            Timestamp: new Date().toLocaleString(),
+            reg_number: regNum,
+            team_name: fd.get('team_name'),
+            leader_ign: fd.get('leader_ign'),
+            leader_uid: fd.get('leader_uid'),
+            p2_ign: fd.get('p2_ign'), p2_uid: fd.get('p2_uid'),
+            p3_ign: fd.get('p3_ign'), p3_uid: fd.get('p3_uid'),
+            p4_ign: fd.get('p4_ign'), p4_uid: fd.get('p4_uid'),
+            mobile_number: fd.get('mobile_number'),
+            email: fd.get('email'),
+            address: fd.get('address')
+        };
+
+        fetch(FF_SHEET_API, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify({ data: [payload] })
+        }).then(res => res.json()).then(data => {
+            document.getElementById('modalRegNum').innerText = regNum;
+            document.getElementById('successModal').style.display = 'flex';
+            btn.disabled = false; btn.innerText = "Submit Free Fire Registration";
+        }).catch(err => {
+            alert("❌ Submission error. Please try again.");
+            btn.disabled = false; btn.innerText = "Submit Free Fire Registration";
+        });
+    }
+
+    function handleLudoSubmit(e) {
+        e.preventDefault();
+        const btn = document.getElementById('ludoSubmitBtn');
+        btn.disabled = true; btn.innerText = "Submitting...";
+        const regNum = getNextReg('LD');
+        const form = document.getElementById('ludoForm');
+        const fd = new FormData(form);
+
+        const payload = {
+            Timestamp: new Date().toLocaleString(),
+            reg_number: regNum,
+            player_name: fd.get('player_name'),
+            ludo_username: fd.get('ludo_username'),
+            mobile_number: fd.get('mobile_number'),
+            email: fd.get('email'),
+            address: fd.get('address')
+        };
+
+        fetch(LUDO_SHEET_API, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify({ data: [payload] })
+        }).then(res => res.json()).then(data => {
+            document.getElementById('modalRegNum').innerText, regNum;
+            document.getElementById('modalRegNum').innerText = regNum;
+            document.getElementById('successModal').style.display = 'flex';
+            btn.disabled = false; btn.innerText = "Submit Ludo Registration";
+        }).catch(err => {
+            alert("❌ Submission error. Please try again.");
+            btn.disabled = false; btn.innerText = "Submit Ludo Registration";
+        });
+    }
+
+    function handleDanceSubmit(e) {
+        e.preventDefault();
+        const btn = document.getElementById('danceSubmitBtn');
+        btn.disabled = true; btn.innerText = "Submitting...";
+        const regNum = getNextReg('DN');
+        const form = document.getElementById('danceForm');
+        const fd = new FormData(form);
+
+        const payload = {
+            Timestamp: new Date().toLocaleString(),
+            registration_number: regNum,
+            team_name: fd.get('team_name'),
+            father_name: fd.get('father_name') || 'N/A',
+            participation_type: fd.get('participation_type'),
+            dance_style: fd.get('dance_style'),
+            age_category: fd.get('age_category'),
+            song_name: fd.get('song_name'),
+            mobile_number: fd.get('mobile_number'),
+            email: fd.get('email'),
+            address: fd.get('address'),
+            cp2_name: fd.get('cp2_name') || 'N/A',
+            cp2_age: fd.get('cp2_age') || 'N/A',
+            cp3_name: fd.get('cp3_name') || 'N/A',
+            cp3_age: fd.get('cp3_age') || 'N/A',
+            cp4_name: fd.get('cp4_name') || 'N/A',
+            cp4_age: fd.get('cp4_age') || 'N/A',
+            cp5_name: fd.get('cp5_name') || 'N/A',
+            cp5_age: fd.get('cp5_age') || 'N/A'
+        };
+
+        fetch(DANCE_SHEET_API, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify({ data: [payload] })
+        }).then(res => res.json()).then(data => {
+            document.getElementById('modalRegNum').innerText = regNum;
+            document.getElementById('successModal').style.display = 'flex';
+            btn.disabled = false; btn.innerText = "Submit Dance & Cultural Registration";
+        }).catch(err => {
+            alert("❌ Submission error. Please try again.");
+            btn.disabled = false; btn.innerText = "Submit Dance & Cultural Registration";
+        });
+    }
+
+    function closeModal() {
+        document.getElementById('successModal').style.display = 'none';
+        location.reload();
+    }
+</script>
+
+</body>
+</html>
