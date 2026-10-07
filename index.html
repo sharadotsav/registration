@@ -35,7 +35,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 15px 10px;
+            padding: 20px 10px;
         }
 
         .main-wrapper {
@@ -45,11 +45,11 @@
 
         .portal-header {
             text-align: center;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             background: linear-gradient(135deg, #78350f, #92400e, #b45309);
             color: white;
-            padding: 24px 12px;
-            border-radius: 18px;
+            padding: 28px 16px;
+            border-radius: 22px;
             box-shadow: var(--shadow-lg);
             border: 2px solid #fcd34d;
             position: relative;
@@ -59,29 +59,27 @@
 
         @keyframes headerGlow {
             from { box-shadow: 0 20px 40px rgba(180, 83, 9, 0.12); }
-            to { box-shadow: 0 20px 50px rgba(245, 158, 11, 0.3); }
+            to { box-shadow: 0 20px 50px rgba(245, 158, 11, 0.35); }
         }
 
         .portal-header h1 {
-            font-size: 26px;
+            font-size: 28px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             margin-bottom: 6px;
             font-weight: 800;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
             background: linear-gradient(135deg, #fff 0%, #fde68a 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .portal-header .tagline {
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 700;
             color: #fef08a;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
-            margin-bottom: 6px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
         }
 
         .portal-header p {
@@ -93,41 +91,35 @@
         .tab-nav {
             display: flex;
             gap: 6px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             background: #ffffff;
-            padding: 6px;
-            border-radius: 14px;
+            padding: 8px;
+            border-radius: 16px;
             box-shadow: var(--shadow-sm);
             border: 1.5px solid var(--border-color);
-            overflow-x: auto;
         }
 
         .tab-btn {
             flex: 1;
-            padding: 10px 6px;
+            padding: 12px 8px;
             border: none;
             background: linear-gradient(135deg, #d97706, #b45309);
             color: white;
-            font-size: 11px;
+            font-size: 11.5px;
             font-weight: 700;
-            border-radius: 10px;
+            border-radius: 12px;
             cursor: pointer;
             text-transform: uppercase;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
             text-align: center;
-            white-space: nowrap;
             box-shadow: 0 4px 15px rgba(217, 119, 6, 0.35);
-        }
-
-        .tab-content {
-            display: block;
         }
 
         .container {
             width: 100%;
             background: var(--card-bg);
-            padding: 20px 16px;
-            border-radius: 20px;
+            padding: 24px 20px;
+            border-radius: 24px;
             box-shadow: var(--shadow-lg);
             border: 1px solid var(--border-color);
             position: relative;
@@ -141,75 +133,139 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
+            height: 5px;
             background: linear-gradient(90deg, #d97706, #e11d48, #f59e0b);
         }
 
         .header {
             text-align: center;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .organizer-tag {
             display: inline-block;
             background: rgba(217, 119, 6, 0.08);
             color: #b45309;
-            padding: 5px 14px;
-            border-radius: 18px;
+            padding: 6px 16px;
+            border-radius: 20px;
             font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.4px;
+            letter-spacing: 0.5px;
             margin-bottom: 10px;
             border: 1px solid rgba(217, 119, 6, 0.2);
         }
 
         h2 {
-            font-size: 20px;
+            font-size: 22px;
             text-transform: uppercase;
-            letter-spacing: 0.4px;
+            letter-spacing: 0.5px;
             color: var(--text-main);
             font-weight: 800;
+        }
+
+        .live-info-banner {
+            background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%);
+            border: 1.5px solid var(--primary);
+            border-radius: 14px;
+            padding: 12px 16px;
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.12);
+        }
+
+        .banner-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .counter-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #10b981;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .counter-title, .clock-title {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+        }
+
+        .counter-badge {
+            background: var(--primary-dark);
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(180, 83, 9, 0.2);
+        }
+
+        .clock-badge {
+            background: #ffffff;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            font-size: 11.5px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 8px;
         }
 
         .event-showcase {
             background: linear-gradient(135deg, #f8fafc 0%, #fffbeb 100%);
             border: 1.5px solid var(--border-color);
-            border-radius: 14px;
-            padding: 14px;
-            margin-bottom: 18px;
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 20px;
         }
 
         .showcase-header {
-            font-size: 11.5px;
+            font-size: 12px;
             font-weight: 800;
             color: var(--primary-dark);
             text-transform: uppercase;
             letter-spacing: 0.6px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 6px;
             border-bottom: 2px solid rgba(217, 119, 6, 0.15);
-            padding-bottom: 5px;
+            padding-bottom: 6px;
         }
 
         .event-details-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 10px;
+            gap: 12px;
         }
 
         .event-card-item {
             background: #ffffff;
             border: 1px solid var(--border-color);
-            padding: 10px 12px;
-            border-radius: 10px;
+            padding: 12px 14px;
+            border-radius: 12px;
             display: flex;
             flex-direction: column;
-            gap: 2px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            gap: 3px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
         }
 
         .event-card-item.full-width {
@@ -217,21 +273,19 @@
         }
 
         .card-lbl {
-            font-size: 10.5px;
+            font-size: 11px;
             font-weight: 700;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.3px;
         }
 
         .card-val {
-            font-size: 12.5px;
+            font-size: 13px;
             font-weight: 700;
             color: var(--text-main);
-            line-height: 1.35;
+            line-height: 1.4;
         }
 
-        /* Helpline Grid with +91 */
         .helpline-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -243,9 +297,8 @@
             background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%);
             border: 1.5px solid var(--border-color);
             border-radius: 10px;
-            padding: 8px 6px;
+            padding: 10px 6px;
             text-align: center;
-            box-shadow: 0 2px 6px rgba(180, 83, 9, 0.05);
             transition: transform 0.2s;
         }
 
@@ -254,25 +307,9 @@
             border-color: var(--primary);
         }
 
-        .helpline-name { 
-            font-size: 11px; 
-            font-weight: 800; 
-            color: var(--primary-dark); 
-            margin-bottom: 3px; 
-        }
+        .helpline-name { font-size: 11px; font-weight: 800; color: var(--primary-dark); margin-bottom: 3px; }
+        .helpline-number { font-size: 10px; font-weight: 700; color: #047857; text-decoration: none; display: block; background: rgba(16, 185, 129, 0.1); padding: 6px; border-radius: 6px; }
 
-        .helpline-number { 
-            font-size: 10px; 
-            font-weight: 700; 
-            color: #047857; 
-            text-decoration: none; 
-            display: block; 
-            background: rgba(16, 185, 129, 0.1); 
-            padding: 5px; 
-            border-radius: 6px; 
-        }
-
-        /* Prizes Showcase */
         .prizes-container-box {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -286,7 +323,6 @@
             border-radius: 10px;
             padding: 10px 6px;
             text-align: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
         }
 
         .prize-badge-card.first { border-color: #f59e0b; background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%); }
@@ -300,34 +336,44 @@
             grid-column: span 3;
             background: rgba(217, 119, 6, 0.08);
             border: 1px dashed var(--primary);
-            padding: 8px;
+            padding: 10px;
             border-radius: 8px;
             text-align: center;
-            font-size: 11px;
+            font-size: 11.5px;
             font-weight: 700;
             color: var(--primary-dark);
-            margin-top: 2px;
+            margin-top: 4px;
         }
 
         fieldset {
-            border: 1.5px solid var(--border-color);
-            border-radius: 14px;
-            padding: 14px 12px;
-            margin-bottom: 14px;
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 18px 14px;
+            margin-bottom: 16px;
             background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+            transition: all 0.3s ease;
+        }
+
+        fieldset:hover {
+            border-color: #fcd34d;
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.08);
         }
 
         legend {
             color: var(--primary-dark);
             font-weight: 800;
-            padding: 0 6px;
-            font-size: 12px;
+            padding: 0 10px;
+            font-size: 12.5px;
             text-transform: uppercase;
-            letter-spacing: 0.4px;
+            letter-spacing: 0.5px;
+            background: #fffbeb;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
         }
 
         .form-group {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .form-group:last-child {
@@ -336,20 +382,23 @@
 
         label {
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-muted);
+            letter-spacing: 0.2px;
         }
 
         input[type="text"], input[type="number"], input[type="email"], input[type="tel"], textarea, select {
             width: 100%;
-            padding: 11px 12px;
+            padding: 12px 14px;
             border: 1.5px solid var(--border-color);
             background: var(--input-bg);
             color: var(--text-main);
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 14px;
+            font-weight: 500;
+            transition: all 0.25s ease;
             -webkit-appearance: none;
         }
 
@@ -357,14 +406,14 @@
             outline: none;
             border-color: var(--primary);
             background: #ffffff;
-            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
         }
 
-        textarea { resize: vertical; min-height: 70px; }
+        textarea { resize: vertical; min-height: 80px; }
 
         .row {
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
 
         .row .form-group { flex: 1; }
@@ -372,15 +421,15 @@
         .fee-options-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 10px;
+            gap: 12px;
+            margin-bottom: 12px;
         }
 
         .fee-card {
             background: #ffffff;
             border: 1.5px solid var(--border-color);
-            border-radius: 12px;
-            padding: 12px;
+            border-radius: 14px;
+            padding: 14px;
             text-align: center;
         }
 
@@ -396,33 +445,59 @@
             font-size: 10px;
             font-weight: 800;
             text-transform: uppercase;
-            padding: 2px 8px;
+            padding: 3px 10px;
             border-radius: 15px;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .fee-title { font-size: 12px; font-weight: 700; color: var(--text-main); margin-bottom: 2px; text-transform: uppercase; }
-        .fee-price { font-size: 18px; font-weight: 800; color: var(--primary-dark); margin-bottom: 2px; }
+        .fee-price { font-size: 20px; font-weight: 800; color: var(--primary-dark); }
 
-        /* Bilingual Offline Payment Box */
+        .payment-mode-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .pay-mode-btn {
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            background: #ffffff;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--text-main);
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .pay-mode-btn.active {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
+            color: var(--primary-dark);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+        }
+
         .venue-payment-box {
             background: linear-gradient(135deg, #fffbeb 0%, #fff7ed 100%);
             border: 2px solid var(--primary);
-            border-radius: 12px;
-            padding: 14px;
-            margin-bottom: 10px;
-            text-align: left;
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 12px;
             display: flex;
             align-items: flex-start;
-            gap: 12px;
+            gap: 14px;
             box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
         }
 
         .venue-icon {
-            font-size: 24px;
+            font-size: 26px;
             background: #ffffff;
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -432,7 +507,7 @@
         }
 
         .venue-text-wrap h4 {
-            font-size: 12.5px;
+            font-size: 13px;
             font-weight: 800;
             color: var(--primary-dark);
             text-transform: uppercase;
@@ -452,19 +527,33 @@
             font-weight: 500;
         }
 
+        .cash-reciept-trigger {
+            display: inline-block;
+            background: #059669;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 6px;
+            cursor: pointer;
+            border: none;
+        }
+
         .whatsapp-payment-box {
             background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
             border: 1.5px solid #10b981;
-            border-radius: 12px;
-            padding: 12px;
+            border-radius: 14px;
+            padding: 14px;
             text-align: center;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
         .whatsapp-content-wrap h4 {
-            font-size: 11.5px;
+            font-size: 12px;
             font-weight: 800;
             color: #047857;
             text-transform: uppercase;
@@ -482,32 +571,31 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 8px;
             background: #25d366;
             color: #ffffff;
-            padding: 9px 14px;
-            border-radius: 8px;
-            font-size: 12px;
+            padding: 11px 16px;
+            border-radius: 10px;
+            font-size: 12.5px;
             font-weight: 700;
             text-decoration: none;
-            box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
         }
 
-        /* Bilingual Rules & Terms Section */
         .rules-container {
             background: #f8fafc;
             border: 1.5px solid var(--border-color);
-            border-radius: 12px;
-            padding: 14px;
-            margin-bottom: 12px;
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 14px;
         }
 
         .rules-title {
-            font-size: 12px;
+            font-size: 12.5px;
             font-weight: 800;
             color: var(--primary-dark);
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 6px;
@@ -515,8 +603,8 @@
 
         .rules-box {
             background: #ffffff;
-            padding: 12px;
-            border-radius: 8px;
+            padding: 14px;
+            border-radius: 10px;
             font-size: 11.5px;
             color: var(--text-main);
             line-height: 1.6;
@@ -524,7 +612,7 @@
         }
 
         .rules-box p {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 500;
         }
 
@@ -532,7 +620,7 @@
             display: block;
             color: var(--text-muted);
             font-size: 11px;
-            margin-top: 1px;
+            margin-top: 2px;
         }
 
         .rules-box p:last-child {
@@ -542,48 +630,54 @@
         .checkbox-group {
             display: flex;
             align-items: flex-start;
-            gap: 8px;
-            font-size: 11.5px;
+            gap: 10px;
+            font-size: 12px;
             cursor: pointer;
             color: var(--text-main);
             user-select: none;
-            line-height: 1.35;
-            font-weight: 500;
+            line-height: 1.4;
+            font-weight: 600;
         }
 
         .checkbox-group input {
             margin-top: 2px;
             accent-color: var(--primary);
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             cursor: pointer;
             flex-shrink: 0;
         }
 
         button[type="submit"] {
             width: 100%;
-            padding: 13px;
+            padding: 15px;
             background: linear-gradient(135deg, #d97706, #b45309);
             color: #ffffff;
             border: none;
-            border-radius: 12px;
-            font-size: 13.5px;
-            font-weight: 700;
+            border-radius: 14px;
+            font-size: 14.5px;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.6px;
+            letter-spacing: 0.8px;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
-            margin-top: 4px;
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.35);
+            transition: all 0.25s ease;
+            margin-top: 6px;
+        }
+
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.45);
         }
 
         .dev-footer {
             width: 100%;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 25px;
             margin-bottom: 10px;
-            padding: 12px;
+            padding: 14px;
             background: #ffffff;
-            border-radius: 14px;
+            border-radius: 16px;
             border: 1.5px solid var(--border-color);
             box-shadow: 0 8px 20px rgba(180, 83, 9, 0.12);
         }
@@ -592,7 +686,7 @@
             font-size: 12px;
             font-weight: 700;
             color: var(--text-muted);
-            letter-spacing: 0.4px;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
         }
 
@@ -602,7 +696,7 @@
             text-decoration: none;
         }
 
-        #successModal {
+        #successModal, #cashReceiptModal {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -614,33 +708,36 @@
 
         .modal-content {
             background: #ffffff;
-            padding: 22px 18px;
-            border-radius: 18px;
-            max-width: 350px; width: 100%;
+            padding: 24px 20px;
+            border-radius: 20px;
+            max-width: 360px; width: 100%;
             text-align: center;
             border-top: 6px solid #059669;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
         }
 
         .reg-num-badge {
             background: rgba(217, 119, 6, 0.08);
             color: var(--primary-dark);
-            font-size: 18px; font-weight: 800;
-            padding: 8px 10px; border-radius: 10px;
-            margin: 10px 0; letter-spacing: 1.2px;
+            font-size: 20px; font-weight: 800;
+            padding: 10px 12px; border-radius: 12px;
+            margin: 12px 0; letter-spacing: 1.5px;
             border: 2px dashed var(--primary);
         }
 
         @media (max-width: 480px) {
-            body { padding: 8px 6px; }
-            .container { padding: 16px 12px; border-radius: 16px; }
+            body { padding: 10px 6px; }
+            .container { padding: 18px 14px; border-radius: 18px; }
             .event-details-grid { grid-template-columns: 1fr; }
             .event-card-item.full-width { grid-column: span 1; }
             .fee-options-grid { grid-template-columns: 1fr; }
             .helpline-grid { grid-template-columns: 1fr; }
             .prizes-container-box { grid-template-columns: 1fr; }
             .prize-note { grid-column: span 1; }
-            .row { flex-direction: column; gap: 10px; }
-            .portal-header h1 { font-size: 22px; }
+            .payment-mode-container { grid-template-columns: 1fr; }
+            .banner-row { flex-direction: column; gap: 6px; align-items: flex-start; }
+            .row { flex-direction: column; gap: 12px; }
+            .portal-header h1 { font-size: 24px; }
         }
     </style>
 </head>
@@ -663,6 +760,21 @@
             <div class="header">
                 <div class="organizer-tag">🏛 Organized by: Shree Durga Mandir Vikas Samiti, Mirzapur</div>
                 <h2>Dance & Cultural Event</h2>
+            </div>
+
+            <!-- Live Registration Counter & Accurate Real-Time Clock Banner -->
+            <div class="live-info-banner">
+                <div class="banner-row">
+                    <div class="counter-left">
+                        <div class="pulse-dot"></div>
+                        <span class="counter-title">⚡ Total Registrations / कुल पंजीकरण</span>
+                    </div>
+                    <div class="counter-badge" id="liveRegCount">0 Entries</div>
+                </div>
+                <div class="banner-row" style="border-top: 1px dashed rgba(180, 83, 9, 0.25); padding-top: 8px; margin-top: 2px;">
+                    <span class="clock-title">🕒 Live Date & Time</span>
+                    <div class="clock-badge" id="liveClock">Loading...</div>
+                </div>
             </div>
 
             <div class="event-showcase">
@@ -708,19 +820,19 @@
                 <fieldset>
                     <legend>1. Participant & Contact Details</legend>
                     <div class="row">
-                        <div class="form-group"><label>Group / Participant Name *</label><input type="text" name="team_name" required placeholder="Name"></div>
-                        <div class="form-group"><label>Father's Name</label><input type="text" name="father_name" placeholder="Father's name"></div>
+                        <div class="form-group"><label>Group / Participant Name *</label><input type="text" name="team_name" required placeholder="Enter participant/group name"></div>
+                        <div class="form-group"><label>Father's Name</label><input type="text" name="father_name" placeholder="Enter father's name"></div>
                     </div>
-                    <div class="row" style="margin-top: 12px;">
-                        <div class="form-group"><label>Mobile (WhatsApp) *</label><input type="tel" name="mobile_number" required placeholder="10-digit number" pattern="[0-9]{10}" maxlength="10"></div>
+                    <div class="row" style="margin-top: 14px;">
+                        <div class="form-group"><label>Mobile (WhatsApp) *</label><input type="tel" name="mobile_number" required placeholder="10-digit mobile number" pattern="[0-9]{10}" maxlength="10"></div>
                         <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="email@gmail.com (Optional)"></div>
                     </div>
-                    <div class="form-group" style="margin-top: 12px;"><label>Full Address *</label><textarea name="address" required placeholder="Village/Ward, Post, PS, District, Pin"></textarea></div>
-                    <div class="row" style="margin-top: 12px;">
+                    <div class="form-group" style="margin-top: 14px;"><label>Full Address *</label><textarea name="address" required placeholder="Village/Ward, Post, PS, District, Pin"></textarea></div>
+                    <div class="row" style="margin-top: 14px;">
                         <div class="form-group"><label>Participation Type *</label><select id="participation_type" name="participation_type" required onchange="toggleDanceTeam()"><option value="Solo">Solo</option><option value="Group">Group / Duet</option></select></div>
                         <div class="form-group"><label>Dance Style *</label><select name="dance_style" required><option value="Bollywood">Bollywood</option><option value="Folk">Folk</option><option value="Classical">Classical</option><option value="HipHop">Hip-Hop</option></select></div>
                     </div>
-                    <div class="row" style="margin-top: 12px;">
+                    <div class="row" style="margin-top: 14px;">
                         <div class="form-group">
                             <label>Age Group *</label>
                             <select name="age_category" required>
@@ -736,35 +848,47 @@
                 <fieldset id="dance-team-fieldset" style="opacity: 0.4; pointer-events: none; transition: opacity 0.3s ease;">
                     <legend>2. Co-Performers (For Groups)</legend>
                     <div class="form-group"><label>Co-Performer 2</label><div class="row"><input type="text" name="cp2_name" class="d-team-inp" placeholder="Name" disabled><input type="number" name="cp2_age" class="d-team-inp" placeholder="Age" disabled></div></div>
-                    <div class="form-group" style="margin-top: 10px;"><label>Co-Performer 3</label><div class="row"><input type="text" name="cp3_name" class="d-team-inp" placeholder="Name" disabled><input type="number" name="cp3_age" class="d-team-inp" placeholder="Age" disabled></div></div>
-                    <div class="form-group" style="margin-top: 10px;"><label>Co-Performer 4</label><div class="row"><input type="text" name="cp4_name" class="d-team-inp" placeholder="Name" disabled><input type="number" name="cp4_age" class="d-team-inp" placeholder="Age" disabled></div></div>
-                    <div class="form-group" style="margin-top: 10px;"><label>Co-Performer 5</label><div class="row"><input type="text" name="cp5_name" class="d-team-inp" placeholder="Name" disabled><input type="number" name="cp5_age" class="d-team-inp" placeholder="Age" disabled></div></div>
+                    <div class="form-group" style="margin-top: 12px;"><label>Co-Performer 3</label><div class="row"><input type="text" name="cp3_name" class="d-team-inp" placeholder="Name" disabled><input type="number" name="cp3_age" class="d-team-inp" placeholder="Age" disabled></div></div>
+                    <div class="form-group" style="margin-top: 12px;"><label>Co-Performer 4</label><div class="row"><input type="text" name="cp4_name" class="d-team-inp" placeholder="Name" disabled><input type="number" name="cp4_age" class="d-team-inp" placeholder="Age" disabled></div></div>
+                    <div class="form-group" style="margin-top: 12px;"><label>Co-Performer 5</label><div class="row"><input type="text" name="cp5_name" class="d-team-inp" placeholder="Name" disabled><input type="number" name="cp5_age" class="d-team-inp" placeholder="Age" disabled></div></div>
                 </fieldset>
 
                 <fieldset>
-                    <legend>3. Registration Fee & Payment</legend>
+                    <legend>3. Registration Fee & Payment Mode</legend>
                     <div class="fee-options-grid">
                         <div class="fee-card highlight"><span class="fee-badge">Solo</span><div class="fee-title">Solo Fee</div><div class="fee-price">₹21</div></div>
                         <div class="fee-card highlight"><span class="fee-badge">Group</span><div class="fee-title">Group Fee</div><div class="fee-price">₹51</div></div>
                     </div>
                     
-                    <!-- Bilingual Offline Cash Payment Box -->
-                    <div class="venue-payment-box">
+                    <div class="payment-mode-container">
+                        <button type="button" class="pay-mode-btn active" id="btnOnline" onclick="setPaymentMode('Online')">🌐 Online UPI / QR</button>
+                        <button type="button" class="pay-mode-btn" id="btnCash" onclick="setPaymentMode('Cash')">💵 Offline Cash</button>
+                    </div>
+
+                    <!-- Online Payment Section -->
+                    <div id="onlinePaymentBox" class="whatsapp-payment-box">
+                        <div class="whatsapp-content-wrap"><h4>Online Payment (QR / UPI)</h4><p>ऑनलाइन भुगतान के लिए व्हाट्सएप पर संदेश भेजें। फॉर्म जमा करने के बाद नीचे Transaction ID दर्ज करें।</p></div>
+                        <a href="https://wa.me/917070760162?text=Hello%20Sir,%20Main%20Dance%20Event%20ke%20liye%20Online%20Payment%20karna%20chahta%20hoon." target="_blank" class="whatsapp-btn">💬 Message on WhatsApp for QR</a>
+                        
+                        <div class="form-group" style="margin-top: 8px; text-align: left;">
+                            <label>Enter UPI Transaction ID / Ref No. *</label>
+                            <input type="text" id="transaction_id" name="transaction_id" placeholder="e.g., UPI/234982347923">
+                        </div>
+                    </div>
+
+                    <!-- Offline Cash Payment Section -->
+                    <div id="cashPaymentBox" class="venue-payment-box" style="display: none;">
                         <div class="venue-icon">💵</div>
                         <div class="venue-text-wrap">
                             <h4>Offline Cash Payment / नकद भुगतान</h4>
                             <p>Fees to be paid in cash at Chhoti Durga Sthan venue counter.</p>
-                            <p class="hi">पंजीकरण शुल्क (Registration Fee) को आप सीधे छोटी दुर्गा स्थान, मिर्ज़ापुर के वेन्यू काउंटर पर नकद (Cash) जमा कर सकते हैं।</p>
+                            <p class="hi">पंजीकरण शुल्क को आप सीधे छोटी दुर्गा स्थान, मिर्ज़ापुर के काउंटर पर नकद जमा कर सकते हैं।</p>
+                            <button type="button" class="cash-reciept-trigger" onclick="generateCashReceipt()">📄 Generate Cash Slip / Reciept</button>
                         </div>
-                    </div>
-
-                    <div class="whatsapp-payment-box">
-                        <div class="whatsapp-content-wrap"><h4>Online Payment (QR / UPI)</h4><p>ऑनलाइन भुगतान के लिए व्हाट्सएप पर संदेश भेजें। फॉर्म जमा करने के बाद पंजीकरण संख्या और स्क्रीनशॉट भेजें।</p></div>
-                        <a href="https://wa.me/917070760162?text=Hello%20Sir,%20Main%20Dance%20Event%20ke%20liye%20Online%20Payment%20karna%20chahta%20hoon." target="_blank" class="whatsapp-btn">💬 Message on WhatsApp for QR</a>
                     </div>
                 </fieldset>
 
-                <!-- Bilingual Essential Guidelines & Instructions -->
+                <!-- Rules & Terms -->
                 <fieldset>
                     <legend>4. Rules & Terms</legend>
                     <div class="rules-container">
@@ -788,19 +912,99 @@
     </div>
 </div>
 
+<!-- Success Modal -->
 <div id="successModal">
     <div class="modal-content">
         <h3 style="color: #059669; margin-bottom: 6px;">🎉 SUCCESSFUL!</h3>
         <p style="font-size: 12.5px; color: var(--text-muted);">Registration Number:</p>
         <div class="reg-num-badge" id="modalRegNum">REG2026001</div>
-        <p style="font-size: 11.5px; color: #b45309; font-weight: 700; margin-bottom: 10px;">📸 Take a screenshot for venue reporting!</p>
-        <a id="whatsappGroupBtn" href="https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK_HERE" target="_blank" style="display: block; background: #25d366; color: white; padding: 10px; border-radius: 9px; font-weight: 700; text-decoration: none; margin-bottom: 8px; font-size: 12px;">💬 Join Official WhatsApp Group</a>
-        <button type="button" onclick="closeModal()" style="background: var(--primary-dark); color: white; border: none; padding: 10px; border-radius: 9px; font-weight: 700; width: 100%; cursor: pointer;">Done</button>
+        <p style="font-size: 11.5px; color: #b45309; font-weight: 700; margin-bottom: 12px;">📸 Take a screenshot for venue reporting!</p>
+        <a id="whatsappGroupBtn" href="https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK_HERE" target="_blank" style="display: block; background: #25d366; color: white; padding: 11px; border-radius: 10px; font-weight: 700; text-decoration: none; margin-bottom: 10px; font-size: 12px;">💬 Join Official WhatsApp Group</a>
+        <button type="button" onclick="closeModal()" style="background: var(--primary-dark); color: white; border: none; padding: 11px; border-radius: 10px; font-weight: 700; width: 100%; cursor: pointer;">Done</button>
+    </div>
+</div>
+
+<!-- Cash Receipt Modal -->
+<div id="cashReceiptModal">
+    <div class="modal-content" style="border-top-color: #d97706; text-align: left;">
+        <div style="text-align: center; border-bottom: 2px dashed #f59e0b; padding-bottom: 10px; margin-bottom: 10px;">
+            <h4 style="color: #b45309; text-transform: uppercase;">Sharadotsav - Cash Receipt</h4>
+            <p style="font-size: 10px; color: var(--text-muted);">Shree Durga Mandir Vikas Samiti, Mirzapur</p>
+        </div>
+        <div style="font-size: 12px; line-height: 1.6; color: var(--text-main);">
+            <p><strong>Participant / Group:</strong> <span id="rcptName">---</span></p>
+            <p><strong>Mobile:</strong> <span id="rcptMobile">---</span></p>
+            <p><strong>Mode:</strong> Offline Cash Payment</p>
+            <p><strong>Status:</strong> <span style="color: #059669; font-weight: 800;">VERIFIED AT COUNTER</span></p>
+        </div>
+        <button type="button" onclick="closeReceiptModal()" style="background: var(--primary-dark); color: white; border: none; padding: 10px; border-radius: 8px; font-weight: 700; width: 100%; margin-top: 14px; cursor: pointer;">Close & Proceed</button>
     </div>
 </div>
 
 <script>
     const DANCE_SHEET_API = 'https://sheetdb.io/api/v1/1pom0ol8gqnph';
+    let currentPaymentMode = 'Online';
+
+    function setPaymentMode(mode) {
+        currentPaymentMode = mode;
+        const btnOnline = document.getElementById('btnOnline');
+        const btnCash = document.getElementById('btnCash');
+        const onlineBox = document.getElementById('onlinePaymentBox');
+        const cashBox = document.getElementById('cashPaymentBox');
+        const txInput = document.getElementById('transaction_id');
+
+        if(mode === 'Online') {
+            btnOnline.classList.add('active');
+            btnCash.classList.remove('active');
+            onlineBox.style.display = 'flex';
+            cashBox.style.display = 'none';
+            txInput.required = true;
+        } else {
+            btnCash.classList.add('active');
+            btnOnline.classList.remove('active');
+            cashBox.style.display = 'flex';
+            onlineBox.style.display = 'none';
+            txInput.required = false;
+            txInput.value = '';
+        }
+    }
+
+    function generateCashReceipt() {
+        const teamName = document.querySelector('input[name="team_name"]').value;
+        const mobile = document.querySelector('input[name="mobile_number"]').value;
+        if(!teamName || !mobile) {
+            alert("⚠️ Pehle Participant Name aur Mobile Number bharein!");
+            return;
+        }
+        document.getElementById('rcptName').innerText = teamName;
+        document.getElementById('rcptMobile').innerText = mobile;
+        document.getElementById('cashReceiptModal').style.display = 'flex';
+    }
+
+    function closeReceiptModal() {
+        document.getElementById('cashReceiptModal').style.display = 'none';
+    }
+
+    function updateLiveStats() {
+        let storedLast = parseInt(localStorage.getItem('DN_last') || '0');
+        document.getElementById('liveRegCount').innerText = storedLast + ' Entries';
+
+        const now = new Date();
+        const options = { 
+            timeZone: 'Asia/Kolkata', 
+            day: 'numeric', 
+            month: 'short', 
+            year: 'numeric', 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            second: '2-digit', 
+            hour12: true 
+        };
+        document.getElementById('liveClock').innerText = now.toLocaleString('en-IN', options);
+    }
+
+    setInterval(updateLiveStats, 1000);
+    updateLiveStats();
 
     function toggleDanceTeam() {
         const pType = document.getElementById('participation_type').value;
@@ -844,6 +1048,8 @@
             mobile_number: fd.get('mobile_number'),
             email: fd.get('email') || 'N/A',
             address: fd.get('address'),
+            payment_mode: currentPaymentMode,
+            transaction_id: currentPaymentMode === 'Online' ? fd.get('transaction_id') : 'CASH_VENUE_PAID',
             cp2_name: fd.get('cp2_name') || 'N/A',
             cp2_age: fd.get('cp2_age') || 'N/A',
             cp3_name: fd.get('cp3_name') || 'N/A',
